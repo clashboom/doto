@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doto 2 - Stats</title>
+   <!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+  // Load the Visualization API, core charts, table and geo charts.
+  // is included in the corechart package.
+  google.load('visualization', '1.0',
+      {'packages':['table', 'barchart', 'corechart']});
+
+  google.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var json_chart = new google.visualization.ColumnChart(document.getElementById('chart_div_json'));
+    var json_data = new google.visualization.DataTable({{ json | safe }}, 0.6);
+
+    var options = {
+          title: 'Doto Public Machmaking Result Distribution',
+                 hAxis: {title: 'Time', titleTextStyle: {color: 'red'},
+                   gridlines: {color: '#333', count: 24}},
+          vAxis: {title: 'Stats'}
+        };
+
+
+    json_chart.draw(json_data, options);
+  }
+</script>
+
+</head>
+<body>
+  <div id='chart_div_json'></div>
+</body>
+</html>

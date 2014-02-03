@@ -1,0 +1,33 @@
+application: testap512
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  # - url: /.*
+  #   script: datastore.app
+
+  # order matters!
+  - url: /stylesheets
+    static_dir: stylesheets
+
+  - url: /templates
+    script: templates.app
+
+  - url: .*
+    script: main.APP
+
+  # - url: /.*
+  #   script: testapp.main
+
+  # - url: /.*
+  #   script: forms.app
+
+
+libraries:
+    - name: jinja2
+      version: latest
+
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doto 2 - Wann ist mai taim to Dendi?</title>
+  <link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
+  <style>
+    html {
+      background:
+      url("http://static.giantbomb.com/uploads/original/16/163752/2271021-borderlands_2011_07_12_17_12_42_35.png");
+      font-family: "Coda Caption";
+    }
+
+    #welcome,
+    #enter,
+    #deform,
+    #status
+    {
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+      font-size: 48px;
+      position: absolute;
+    }
+
+    #welcome { bottom: 300px; left: 250px; }
+    #enter { bottom: 150px; left: 300px; }
+    #status { bottom: 350px; left: 200px; font-size: 72px; color: #ff69b4; }
+
+    #deform {
+      position: absolute;
+      bottom: 250px;
+      left: 300px;
+    }
+
+    #userid {
+      border: none;
+      font-size: 22px;
+      background: #ff69b4;
+      line-height: 1.5;
+      width: 100%;
+      padding: 20px;
+      font-family: "Coda Caption";
+      color: #fff;
+    }
+
+    input[type="submit"] {
+      font-size: 32px;
+      font-family: "Coda Caption";
+      color: #ff69b4;
+      text-transform: uppercase;
+      text-shadow: 2px 2px #000;
+      border: 1px solid #ff69b4;
+      float: right;
+    }
+
+    input[type="submit"]:hover {
+      background: #222;
+      color: #ccc;
+      text-shadow: 2px 2px #ff69b4;
+      border: 1px dotted #ff69b4;
+    }
+
+    label {
+      display: block;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    a { color: #222; }
+    a:hover {color: #fff;}
+
+
+
+  </style>
+</head>
+
+<body>
+  <h1 id="welcome">Yolo, traveler.</h1>
+  {% if userid %}
+  <div id="userid"> Hang in there, user #{{ userid }}. Fetching your shit.
+    Depending on your game count, due to request frequency limitations
+    this may take quite a while. Press the button below
+    to check for progress. If we are not there in an hour, something is either terribly
+  wrong or you play way too much Doto. Either try later or retry via <a href="/">
+      homepage</a></div>
+  {% endif %}
+  <form action="" id="deform" method="POST">
+    <input type="submit" value="Check yourself">
+  </form>
+  {% if status %}
+  <h2 id="status">{{ status }}</h2>
+  {% endif %}
+  <h2 id="enter">You better.</h2>
+
+
+</body>
+</html>

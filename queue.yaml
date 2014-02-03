@@ -1,0 +1,10 @@
+#Set the total storage limit to all queues to 100MB
+total_storage_limit: 100M
+queue:
+  - name: matchresults
+    rate: 5.0/s
+    retry_parameters:
+      task_retry_limit: 7
+      task_age_limit: 3600s
+      min_backoff_seconds: 2
+      max_backoff_seconds: 60

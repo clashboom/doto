@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doto 2 - Wann ist mai taim to Dendi?</title>
+  <link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
+  <style>
+    html {
+      background:
+      url("http://static.giantbomb.com/uploads/original/16/163752/2271021-borderlands_2011_07_12_17_12_42_35.png");
+      font-family: "Coda Caption";
+    }
+
+    #welcome,
+    #enter,
+    #deform
+    {
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+      font-size: 48px;
+      position: absolute;
+    }
+
+    #welcome { bottom: 350px; left: 250px; }
+    #enter { bottom: 50px; left: 250px; }
+
+    #deform {
+      position: absolute;
+      bottom: 200px;
+      left: 300px;
+    }
+
+    #userid {
+      border: none;
+      font-size: 20px;
+      line-height: 3;
+      font-family: "Coda Caption";
+      padding: 5px;
+    }
+
+    input[type="submit"] {
+      font-size: 32px;
+      font-family: "Coda Caption";
+      color: #ff69b4;
+      text-transform: uppercase;
+      text-shadow: 2px 2px #000;
+      border: 1px solid #ff69b4;
+      float: right;
+    }
+
+    input[type="submit"]:hover {
+      background: #222;
+      color: #ccc;
+      text-shadow: 2px 2px #ff69b4;
+      border: 1px dotted #ff69b4;
+    }
+
+    label {
+      display: block;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    #forced {
+      width: 20px;
+      height: 20px;
+      line-height: 1.5;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <h1 id="welcome">Hello, traveler.</h1>
+  <form action="" id="deform" method="POST">
+    <label for="userid">USER ID:
+      <input id="userid" type="text" name="userid">
+    </label>
+    <label for="forced">FORCED REFRESH:
+      <input id="forced" type="checkbox" name="forced">
+    </label>
+    <input type="submit" value="Fetch">
+  </form>
+  <h2 id="enter">Enter your shit.</h2>
+</body>
+</html>
